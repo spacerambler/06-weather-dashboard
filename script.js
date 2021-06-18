@@ -2,12 +2,13 @@ const API_URL = 'http://api.openweathermap.org/data/2.5/forecast?q=chicago&appid
 
 const apiKey = "c9e96d3d81e462961b72fff443b910ae"
 
-const main = document.getElementById('main')
-const cityFormEl = document.getElementById('searchCity')
-const forecastEl = document.getElementById('forecast')
-const searchCity = document.getElementById('searchCity')
-const TusconBtn = document.getElementById('Tuscon').addEventListener('click', Tuscon)
+const main = document.getElementById('#main')
+const forecastEl = document.getElementById('#forecast')
+const searchCityInputEl = document.getElementById('#searchCity')
 
+//const TusconBtn = document.getElementById('Tuscon').addEventListener('click', Tuscon)
+
+/*
 getWeather(API_URL)
 
 async function getWeather(url) {
@@ -34,3 +35,40 @@ function showCurrentConditions(weather) {
     main.appendChild(currentConditionsEl)
   })
 }
+*/
+
+var formSubmitHandler = function (e) {
+  e.preventDefault();
+
+  var searchCity = searchCityInputEl.value.trim();
+
+  if (searchCity) {
+    getCity(searchCity);
+
+    main.textContent = '';
+    searchCityInputEl.value = '';
+  } else {
+    alert('Please enter a city name');
+  }
+};
+
+getWeatherData(searchCity)
+
+var getWeatherData = function (searchCity) {
+  var apiUrl = 'http://api.openweathermap.org/data/2.5/forecast?q=' + SearchCity + '&appid=c9e96d3d81e462961b72fff443b910ae';
+
+  fetch(apiUrl)
+    .then(function (response) {
+      if (response.ok) {
+        console.log(response);
+        response.json().then(function (data) {
+          console.log(data);
+        });
+      } else {
+        alert('Error: ' + response.statusText);
+      }
+    })
+    .catch(function (error) {
+      alert('Unable to connect');
+    });
+};
