@@ -89,6 +89,47 @@ h3 {
     outline: 0;
 }
 
+main{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.weather {
+    width: 300px;
+    margin: 1rem;
+    background-color: lightgrey;
+    box-shadow:  0 4px 5px rgba(0, 0, 0, 0.2);
+    position: relative;
+    border-radius: 3px;
+}
+
+.weather-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 9.5rem 1rem 1rem;
+    letter-spacing: 0.5px;
+}
+
+.weather-info span {
+    background-color: #fff;
+    padding: .25rem .5rem;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+.weather-info span.green {
+    color: lightgreen
+}
+
+.weather-info span.orange {
+    color: orange;
+}
+
+.weather-info span.red {
+    color: red;
+}
+
 footer {
     position: relative;
     left: 0;
