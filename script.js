@@ -1,4 +1,4 @@
-const API_URL = 'http://api.openweathermap.org/data/2.5/forecast?q=chicago&appid=c9e96d3d81e462961b72fff443b910ae'
+const API_URL = 'http://api.openweathermap.org/data/2.5/forecast?id=4887398&appid=c9e96d3d81e462961b72fff443b910ae'
 
 const apiKey = "c9e96d3d81e462961b72fff443b910ae"
 
@@ -8,7 +8,7 @@ const searchCityInputEl = document.getElementById('#searchCity')
 
 //const TusconBtn = document.getElementById('Tuscon').addEventListener('click', Tuscon)
 
-/*
+
 getWeather(API_URL)
 
 async function getWeather(url) {
@@ -18,7 +18,7 @@ async function getWeather(url) {
 }
 
 function showCurrentConditions(weather) {
-  main.innerHTML = ''
+  //main.innerHTML = ''
 
   weather.forEach((conditions) => {
     const {icon, description, temp, wind, humidity} = conditions
@@ -35,7 +35,6 @@ function showCurrentConditions(weather) {
     main.appendChild(currentConditionsEl)
   })
 }
-*/
 
 var formSubmitHandler = function (e) {
   e.preventDefault();
@@ -52,8 +51,7 @@ var formSubmitHandler = function (e) {
   }
 };
 
-getWeatherData(searchCity)
-
+/*
 var getWeatherData = function (searchCity) {
   var apiUrl = 'http://api.openweathermap.org/data/2.5/forecast?q=' + SearchCity + '&appid=c9e96d3d81e462961b72fff443b910ae';
 
@@ -72,3 +70,4 @@ var getWeatherData = function (searchCity) {
       alert('Unable to connect');
     });
 };
+*/
